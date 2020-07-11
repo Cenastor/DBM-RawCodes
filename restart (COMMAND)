@@ -1,0 +1,39 @@
+{
+  "name": "restart",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "CJgJT",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "The bot is now restarting please give it time to start up.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "time": "1",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "filename": "bot.js",
+      "name": "Restart Bot"
+    }
+  ],
+  "customData": {
+    "Command Info": {
+      "category": "Owner",
+      "description": "restart the bot.",
+      "include": "Yes"
+    }
+  }
+}
