@@ -48,15 +48,23 @@
     {
       "storage": "1",
       "varName": "embed",
-      "message": "Total Guilds: ${tempVars(\"guilds\")}",
+      "message": "**Total Guilds**: ``${tempVars(\"guilds\")}``",
       "name": "Set Embed Description"
     },
     {
       "storage": "1",
       "varName": "embed",
-      "fieldName": "Guilds List",
-      "message": "${tempVars(\"test\")}(${tempVars(\"ids\")})",
-      "inline": "1",
+      "fieldName": "**Names**",
+      "message": "${tempVars(\"test\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "ID",
+      "message": "``${tempVars(\"ids\")}``",
+      "inline": "0",
       "name": "Add Embed Field"
     },
     {
@@ -68,5 +76,6 @@
       "varName3": "",
       "name": "Send Embed Message"
     }
-  ]
+  ],
+  "comType": "0"
 }
