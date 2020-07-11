@@ -1,0 +1,223 @@
+{
+  "name": "insta",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "nyqcF",
+  "actions": [
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "19",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "sv",
+      "name": "Store Command Params"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.username",
+      "storage": "1",
+      "varName": "USerinfo",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.biography",
+      "storage": "1",
+      "varName": "biography",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.is_verified",
+      "storage": "1",
+      "varName": "verified",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.full_name",
+      "storage": "1",
+      "varName": "full_name",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.followers.count",
+      "storage": "1",
+      "varName": "followers.count",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.following.count",
+      "storage": "1",
+      "varName": "following.count",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.uploads.count",
+      "storage": "1",
+      "varName": "uploads.count",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.is_private",
+      "storage": "1",
+      "varName": "is_private",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "token": "",
+      "user": "",
+      "pass": "",
+      "url": "https://apis.duncte123.me/insta/${tempVars(\"sv\")}",
+      "path": "user.profile_pic_url",
+      "storage": "1",
+      "varName": "url",
+      "debugMode": "1",
+      "headers": "",
+      "name": "Store Json From WebAPI"
+    },
+    {
+      "title": "Account Info▸ ${tempVars(\"sv\")}",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "${tempVars(\"url\")}",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "message": "Full Name : __***${tempVars(\"full_name\")}***__\nUserinfo : __***${tempVars(\"USerinfo\")}***__\nIs that account Verified : __***${tempVars(\"verified\")}***__\nIs that account Private : __***${tempVars(\"is_private\")}***__\nFollowers count : __***${tempVars(\"followers.count\")}***__\nFollowing count : __***${tempVars(\"following.count\")}***__\nbiography :  __***${tempVars(\"biography\")}***__\nuploads count :  __***${tempVars(\"uploads.count\")}***__",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "easy",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "easy",
+      "message": "Error,\n!insta username",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "easy",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "comType": "0",
+  "customData": {
+    "Command Info": {
+      "category": "User",
+      "description": "get a users instagram profile ",
+      "include": "Yes"
+    }
+  }
+}
