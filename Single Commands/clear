@@ -1,0 +1,96 @@
+{
+  "name": "clear",
+  "permissions": "MANAGE_MESSAGES",
+  "restriction": "1",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_MESSAGES",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: You don't have the necessary rights to do so (Manage Messages)",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**:x: Number? **\n ** ** ",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "amount",
+      "name": "Store Command Params"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**${member} deleting ${tempVars(\"amount\")} message/s...**",
+      "storage": "1",
+      "varName2": "sterge",
+      "name": "Send Message"
+    },
+    {
+      "time": "2",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "1",
+      "varName": "sterge",
+      "name": "Delete Message"
+    },
+    {
+      "channel": "0",
+      "count": "${tempVars(\"amount\")}",
+      "condition": "0",
+      "custom": "",
+      "varName": "",
+      "name": "Delete Bulk Messages"
+    }
+  ],
+  "_id": "lflNK",
+  "comType": "0",
+  "customData": {
+    "Command Info": {
+      "category": "Staff",
+      "description": "just a simple clear command.",
+      "include": "Yes"
+    }
+  }
+}
