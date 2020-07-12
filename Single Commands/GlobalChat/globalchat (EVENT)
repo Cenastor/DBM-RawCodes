@@ -1,0 +1,65 @@
+{
+  "name": "<font color=\"orange\"> Global Chat </font>",
+  "temp": "",
+  "event-type": "0",
+  "_id": "eSegl",
+  "actions": [
+    {
+      "server": "1",
+      "varName": "servers",
+      "name": "Change Server"
+    },
+    {
+      "info": "1",
+      "find": "global",
+      "storage": "1",
+      "varName": "gc.server.channel",
+      "name": "Find Channel"
+    },
+    {
+      "title": "",
+      "author": "${globalVars(\"Member.Tag\")}",
+      "color": "",
+      "url": "",
+      "authorIcon": "${globalVars(\"Member.Pic\")}",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "gc.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "gc.embed",
+      "message": "${globalVars(\"gc.message\")}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "gc.embed",
+      "message": "Server - ${globalVars(\"gc.server.name\")}",
+      "footerIcon": "",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "gc.embed",
+      "channel": "5",
+      "varName2": "gc.server.channel",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}

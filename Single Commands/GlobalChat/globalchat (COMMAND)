@@ -1,0 +1,126 @@
+{
+  "name": "<font color=\"orange\"> Global Chat </font>",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "JhNwr",
+  "actions": [
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "gc.name",
+      "name": "Store Channel Info"
+    },
+    {
+      "comment": "▼ ▼ ▼ Channelname (z.B 'global-chat')",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "storage": "1",
+      "varName": "gc.name",
+      "comparison": "1",
+      "value": "'global'",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "comment": "===========================",
+      "color": "#ffff00",
+      "name": "Comment"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "1",
+      "iftrueVal": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "3",
+      "varName2": "gc.message",
+      "name": "Store Message Info"
+    },
+    {
+      "message": "0",
+      "varName": "",
+      "info": "3",
+      "storage": "1",
+      "varName2": "gc.author",
+      "name": "Store Message Info"
+    },
+    {
+      "member": "2",
+      "varName": "gc.author",
+      "info": "22",
+      "storage": "3",
+      "varName2": "Member.Tag",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "gc.author",
+      "info": "16",
+      "storage": "3",
+      "varName2": "Member.Pic",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "3",
+      "varName2": "gc.server.name",
+      "name": "Store Server Info"
+    },
+    {
+      "storage": "3",
+      "varName": "gc.message",
+      "comparison": "5",
+      "value": "'discord.gg'",
+      "iftrue": "3",
+      "iftrueVal": "3",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "source": "eSegl",
+      "list": "4",
+      "varName": "",
+      "tempVarName": "servers",
+      "type": "true",
+      "name": "Loop Through List"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Keine Invites gestattet, ${member}!",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "3"
+}
