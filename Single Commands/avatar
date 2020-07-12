@@ -1,0 +1,58 @@
+{
+  "name": "Avatar",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "BcqGE",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatarurl",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "avatarurl",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "",
+      "author": "Link",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "${tempVars(\"avatarurl\")}",
+      "imageUrl": "${tempVars(\"avatarurl\")}",
+      "thumbUrl": "",
+      "timestamp": "true",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
