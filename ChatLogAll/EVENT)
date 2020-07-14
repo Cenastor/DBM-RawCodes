@@ -1,0 +1,157 @@
+{
+  "name": "LogAll",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "wSGqK",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Sent Message",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ServerID",
+      "name": "Store Server Info"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "",
+      "filepath": "./logs/${tempVars(\"ServerID\")}",
+      "filetask": "0",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "Name",
+      "name": "Store Server Info"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "!!${tempVars(\"Name\")}",
+      "filepath": "./logs/${tempVars(\"ServerID\")}/",
+      "filetask": "1",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "Mem ID",
+      "name": "Store Member Info"
+    },
+    {
+      "type": "0",
+      "storage": "1",
+      "varName": "Year",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "1",
+      "storage": "1",
+      "varName": "Month",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "2",
+      "storage": "1",
+      "varName": "Day",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "3",
+      "storage": "1",
+      "varName": "Hour",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "4",
+      "storage": "1",
+      "varName": "Munitw",
+      "name": "Store Time Info"
+    },
+    {
+      "type": "5",
+      "storage": "1",
+      "varName": "Seccond",
+      "name": "Store Time Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "18",
+      "storage": "1",
+      "varName2": "Mem Tag",
+      "name": "Store Member Info"
+    },
+    {
+      "input": "[${tempVars(\"Year\")}:${tempVars(\"Month\")}:${tempVars(\"Day\")}:${tempVars(\"Hour\")}:${tempVars(\"Munitw\")}:${tempVars(\"Seccond\")}] -> ${tempVars(\"Mem Tag\")}: ${tempVars(\"Sent Message\")}",
+      "format": ".txt",
+      "filename": "${tempVars(\"Mem ID\")}",
+      "filepath": "./logs/${tempVars(\"ServerID\")}/",
+      "filetask": "2",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "input": "[${tempVars(\"Year\")}:${tempVars(\"Month\")}:${tempVars(\"Day\")}:${tempVars(\"Hour\")}:${tempVars(\"Munitw\")}:${tempVars(\"Seccond\")}] -> ${tempVars(\"Mem Tag\")}: ${tempVars(\"Sent Message\")}",
+      "format": ".txt",
+      "filename": "!massserverlog",
+      "filepath": "./logs/${tempVars(\"ServerID\")}/",
+      "filetask": "2",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "",
+      "filepath": "./logs/!GlobalLog",
+      "filetask": "0",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "input": "[${tempVars(\"Year\")}:${tempVars(\"Month\")}:${tempVars(\"Day\")}:${tempVars(\"Hour\")}:${tempVars(\"Munitw\")}:${tempVars(\"Seccond\")}] -> ${tempVars(\"Mem Tag\")} -> ${tempVars(\"Name\")}: ${tempVars(\"Sent Message\")}",
+      "format": ".txt",
+      "filename": "globallog",
+      "filepath": "./logs/!GlobalLog",
+      "filetask": "2",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "input": "",
+      "format": "",
+      "filename": "",
+      "filepath": "./logs/!ByUser",
+      "filetask": "0",
+      "input2": "",
+      "name": "File Control"
+    },
+    {
+      "input": "[${tempVars(\"Year\")}:${tempVars(\"Month\")}:${tempVars(\"Day\")}:${tempVars(\"Hour\")}:${tempVars(\"Munitw\")}:${tempVars(\"Seccond\")}] -> ${tempVars(\"Mem Tag\")} -> ${tempVars(\"Name\")}: ${tempVars(\"Sent Message\")}",
+      "format": ".log",
+      "filename": "${tempVars(\"Mem ID\")}",
+      "filepath": "./logs/!ByUser",
+      "filetask": "2",
+      "input2": "",
+      "name": "File Control"
+    }
+  ],
+  "comType": "3",
+  "event-type": "0"
+}
