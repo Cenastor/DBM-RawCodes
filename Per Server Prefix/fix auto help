@@ -1,0 +1,52 @@
+{
+  "name": "help",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "dtZie",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "myParam",
+      "name": "Store Command Params"
+    },
+    {
+      "title": "Bot Commands",
+      "author": "",
+      "color": "RANDOM",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "e",
+      "name": "Create Embed Message"
+    },
+    {
+      "code": "var thisCmd = \"help\";\nvar myCat = tempVars(\"myParam\").toUpperCase().trim();\nvar cmds = this.getDBM().Files.data.commands;\nvar p = server.tag;\nvar myEmbed = tempVars(\"e\");\n\nif (myCat == p.toUpperCase() + thisCmd.toUpperCase()) {\n\t//if no category is listed, generate list of categories\n\tvar myCategories = [];\n\tfor (c = 1; c < cmds.length; c++) {\n\t\tvar custD = cmds[c].customData;\n\t\tif (custD) {\n\t\t\tvar d = custD[\"Command Info\"];\n\t\t\tif (d) {\n\t\t\t\tvar cat = d.category;\n\t\t\t\tvar incl = d.include;\n\t\t\t\tif (incl == \"Yes\") {\n\t\t\t\t\tif (myCategories.indexOf(cat) < 0) {myCategories.push(cat)};\n\t\t\t\t};\t\t\t\t\n\t\t\t};\n\t\t};\n\t};\t\n\tmyEmbed.setDescription(\"The following categories are available:\\n**\" + myCategories + \"**\\n\\nType `\" + p +\"help [category]` for more info\");\n} else {\n\t//if a category is specified display all commands in that category\n\tvar myCommands = \"\";\n\tfor (c = 1; c < cmds.length; c++) {\n\t\tvar custD = cmds[c].customData;\n\t\tif (custD) {\n\t\t\tvar d = custD[\"Command Info\"];\n\t\t\tif (d) {\n\t\t\t\tvar name = cmds[c].name;\n\t\t\t\tvar desc = d.description;\n\t\t\t\tvar cat = d.category.toUpperCase().trim();\n\t\t\t\tvar incl = d.include;\n\t\t\t\tif (incl == \"Yes\" && cat == myCat) {\n\t\t\t\t\tmyCommands += (\"`\" + p + name + \"` - \" + desc + \"\\n\");\n\t\t\t\t};\t\t\t\t\n\t\t\t};\n\t\t};\n\t}\n\tmyEmbed.setDescription(\"**Category: \" + myCat.toUpperCase() + \"**\\n\" + myCommands);\n}",
+      "behavior": "0",
+      "interpretation": "1",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "e",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    }
+  ],
+  "customData": {
+    "Command Info": {
+      "category": "Info",
+      "description": "Displays a full list of commands",
+      "include": "Yes"
+    }
+  }
+}
