@@ -1,0 +1,39 @@
+{
+  "name": "setglobalvar",
+  "permissions": "NONE",
+  "restriction": "4",
+  "_id": "xkXKj",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "varName",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "varAmount",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "3",
+      "varName": "${tempVars(\"varName\")}",
+      "changeType": "0",
+      "value": "tempVars(\"varAmount\")",
+      "name": "Control Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Global Variable `${tempVars(\"varName\")}` is now set to `${tempVars(\"varAmount\")}`",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ]
+}
