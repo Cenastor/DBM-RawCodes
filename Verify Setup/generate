@@ -1,0 +1,114 @@
+{
+  "name": "generate",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "AenRW",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "role": "4",
+      "varName2": "v.role",
+      "iftrue": "2",
+      "iftrueVal": "11",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "info": "1",
+      "storage": "1",
+      "varName2": "v.channel.name",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "v.channel.name",
+      "comparison": "1",
+      "value": "serverVars(\"v.channel\")",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "2",
+      "iffalseVal": "8",
+      "name": "Check Variable"
+    },
+    {
+      "input": "'*'",
+      "wordLength": "6",
+      "storage": "1",
+      "varName": "gencode",
+      "name": "Randomize Letters"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "dataName": "v.code",
+      "changeType": "0",
+      "value": "tempVars(\"gencode\")",
+      "name": "Control Member Data"
+    },
+    {
+      "channel": "1",
+      "varName": "",
+      "message": "please use `verify ${tempVars(\"gencode\")}` in the verify channel to gain access to the rest of the server.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Ive send you a DM!",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "please goto ${serverVars(\"v.channel\")} and use the verify commands.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You already have ${serverVars(\"v.role\")} on this server.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "storage": "0",
+      "varName": "",
+      "reason": "",
+      "name": "Delete Message"
+    }
+  ],
+  "_aliases": [
+    "gencode",
+    "gen"
+  ]
+}
